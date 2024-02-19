@@ -9,7 +9,7 @@
 
     <!-- STYLES -->
 
-    <style {csp-style-nonce}>
+    <style>
 
 
         * {
@@ -211,10 +211,8 @@
 
 </header>
 
-<!-- CONTENT -->
 <?php
 
-// Read the JSON file
 $jsonData = '[
   {
     "date": "15. 02. 2024",
@@ -259,25 +257,24 @@ $jsonData = '[
 ]
 ';
 
-// Decode the JSON data into a PHP array
 $dataArray = json_decode($jsonData, true);
-
-// Check if decoding was successful
 if ($dataArray === null) {
-  // JSON decoding failed
   echo "Error decoding JSON";
 }
-
 ?>
+
+<!-- NALOGA 3 - OGLASI -->
+
+
 <style>
     .card {
-        width: 400px; /* Adjust as needed */
-        border: 1px solid #ccc; /* Add border for clarity */
-        border-radius: 5px; /* Rounded corners */
+        width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
     .card-img-container {
-        position: relative; /* Set relative positioning for the container */
+        position: relative;
     }
 
     .card-img-top {
@@ -286,20 +283,20 @@ if ($dataArray === null) {
     }
 
     .contact-info {
-        position: absolute; /* Set absolute positioning for the contact info */
-        bottom: 0; /* Position the contact info at the bottom */
+        position: absolute; 
+        bottom: 0;
         left: 0; 
         height: 45px;
-        width: 100%; /* Full width */
+        width: 100%;
         background-color: rgba(128,128,128,0.7);
-        padding: 10px; /* Add padding for spacing */
-        color: #fff; /* White text color */
-        border-bottom-left-radius: 5px; /* Add border radius to match card border */
-        border-bottom-right-radius: 5px; /* Add border radius to match card border */
+        padding: 10px;
+        color: #fff;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
     }
 
     .card-body {
-        padding: 15px; /* Add padding for spacing */
+        padding: 15px;
     }
     
     .footer{
@@ -366,7 +363,8 @@ if ($dataArray === null) {
         font-family: 'Open Sans Semibold';
     }
   </style>
-  
+
+  <!-- NALOGA 2 - FORM -->
 
   
   <h1>Naloga 2</h1>
@@ -417,7 +415,6 @@ if ($dataArray === null) {
       event.preventDefault(); // Prevent the form from submitting normally
       document.getElementById("thankyou_message").style.display = "block";
 
-      // Display the thank you message
       saveUser(form)
         .then(responseContent => console.log(responseContent))
         .catch(err => console.error(err))
@@ -444,11 +441,14 @@ if ($dataArray === null) {
       if (!response.ok)
         throw `Error response code: ${response.status}`
 
-      //Optionally return the response content
       return await response.json();
     }
   </script>
-    <h1>Grouped By Dates</h1>
+
+  <!-- NALOGA 1 - TABELE -->
+
+
+  <h1>Grouped By Dates</h1>
 
   <table class="table">
     <thead>
